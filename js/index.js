@@ -18,6 +18,14 @@ function ai(conv,message){
 		username = message;
 		send_message(conv,"Hi, "+ username + ". How are you?");
 	}
+	else{
+		// $("#send").click(function(){
+		    $.get("getresponse.php", {q:message}, function(data, status){
+		        // alert("Data: " + data + "\nStatus: " + status);
+		        send_message(conv,data);
+		    });
+		// }); 		 
+	}
 }
 $(function(){
 	var open = false;
